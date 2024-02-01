@@ -7,5 +7,5 @@ try {
 } catch (erro) {
     console.log(erro)
 }
-export { sequelize }
 
+export { sequelize }

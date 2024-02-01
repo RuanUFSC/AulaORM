@@ -1,7 +1,7 @@
 // Importação de pacotes e arquivos
 import 'dotenv/config'
 import express from 'express'
-import { router } from './routes/compras.js'
+import { router } from './routes/herois.js'
 import { sequelize } from './database.js'
 
 try {
