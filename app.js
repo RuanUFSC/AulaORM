@@ -17,4 +17,4 @@ app.use(express.json())
 // Utilizando o arquivo de rotas importado na linha 3
 app.use(router)
 // Iniciando o servidor na porta 3000
-app.listen(3003, () => console.log('Servidor iniciado'))
+app.listen(3000, () => console.log('Servidor iniciado'))

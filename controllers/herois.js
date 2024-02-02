@@ -9,7 +9,7 @@ const criarHeroi = async (req, res) => {
         // const novoHeroi = { nome: nome, pontosDePoder: pontosDePoder }
         const novoHeroi = { nome, pontosDePoder }
         const resultado = await Heroi.create(novoHeroi)
-        res.status(201).send({ message: 'Heroi criado com sucesso', data: resultado })
+        res.status(201).send({ message: 'Heroi criado com sucesso', data: resultado, tipo: req.tipoUsuario })
     } catch (err) {
         res.status(500).send({ message: 'Houve um erro na criação' })
     }
