@@ -6,7 +6,6 @@ const criarHeroi = async (req, res) => {
         if (!nome || !pontosDePoder) {
             return res.status(400).send({ message: 'Dados incompletos' })
         }
-        // const novoHeroi = { nome: nome, pontosDePoder: pontosDePoder }
         const novoHeroi = { nome, pontosDePoder }
         const resultado = await Heroi.create(novoHeroi)
         res.status(201).send({ message: 'Heroi criado com sucesso', data: resultado, tipo: req.tipoUsuario })
@@ -15,7 +14,7 @@ const criarHeroi = async (req, res) => {
     }
 }
 
-const getHerois = async (req, res) => {
+const getHerois = async (_, res) => {
     try {
         const herois = await Heroi.findAll()
         // findByPk(1)
@@ -59,12 +58,12 @@ const apagarHeroi = async (req, res) => {
 const getHeroisPeloId = async (req, res) => {
     try {
         const { id } = req.params
-        if(!id) {
+        if (!id) {
             return res.status(400).send({ message: 'Favor informar o id' })
         }
         const heroi = await Heroi.findByPk(id)
         // const heroi = await Heroi.findOne({ where: { id } })
-        if(heroi){
+        if (heroi) {
             res.status(200).send({ message: 'Heroi encontrado', heroi })
         } else {
             res.status(204).send({ message: 'Heroi nao encontrado' })
